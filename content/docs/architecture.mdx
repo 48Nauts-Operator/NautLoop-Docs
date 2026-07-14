@@ -5,14 +5,16 @@ description: Four pillars, one loop pattern — how isolation and coordination w
 
 ## The four pillars
 
-Every product surface NautLoop customers see is a composition of four layers, all built and operated by 48Nauts and in production internally for over a year:
+Every product surface NautLoop customers see is a composition of these layers, all built and operated by 48Nauts and in production internally for over a year:
 
 | Layer | What it does |
 |---|---|
-| **xNaut** | Orchestration brain — Visual Loop Designer, agent dispatcher, doc vault, proof-of-work session logs |
+| **[xNaut](https://xnaut.dev)** *(optional)* | Open-source orchestration & agentic tool (MIT). Adds the Visual Loop Designer, agent dispatcher, doc vault, and proof-of-work session logs on top of NautLoop |
 | **NautLoop Core** | Isolated compute — Firecracker microVMs on EU-hosted hardware, sub-two-second boot, template-based agents |
 | **[Engram](https://engrm.ai)** | Mesh + optional memory — signed peer-to-peer messaging, per-tenant knowledge that compounds |
 | **NautGate** | LLM gateway — provider abstraction, observability, per-tenant metering and cost tracking |
+
+**You don't need xNaut to use NautLoop.** The `nautloop` CLI orchestrates swarms from any terminal you already use. [xNaut](https://xnaut.dev) integrates natively if you want the visual layer — it's a free, MIT-licensed tool, not a requirement.
 
 ## The loop pattern
 
