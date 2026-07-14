@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+/* NautLoop brand — cobalt circuit (matches nautloop.com) */
+:root {
+  --color-fd-primary: hsl(224, 76%, 48%);            /* #1D4ED8 */
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-ring: hsl(224, 76%, 48%);
+}
+
+.dark {
+  --color-fd-background: hsl(225, 44%, 7%);          /* #0A0E1A */
+  --color-fd-foreground: hsl(223, 33%, 94%);         /* #E9EDF6 */
+  --color-fd-card: hsl(223, 37%, 13%);               /* #111A30 */
+  --color-fd-card-foreground: hsl(223, 33%, 94%);
+  --color-fd-popover: hsl(223, 37%, 13%);
+  --color-fd-popover-foreground: hsl(223, 33%, 94%);
+  --color-fd-muted: hsl(224, 43%, 10%);
+  --color-fd-muted-foreground: hsl(220, 18%, 66%);   /* #98A2B8 */
+  --color-fd-border: hsl(223, 33%, 23%);             /* #26314E */
+  --color-fd-primary: hsl(224, 81%, 55%);            /* #2E5BE8 */
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-secondary: hsl(224, 43%, 10%);
+  --color-fd-secondary-foreground: hsl(223, 33%, 94%);
+  --color-fd-accent: hsl(224, 40%, 12%);
+  --color-fd-accent-foreground: hsl(223, 33%, 94%);
+  --color-fd-ring: hsl(222, 91%, 73%);               /* #7C9CFA */
+}
+
+.dark #nd-sidebar {
+  --color-fd-muted: hsl(224, 43%, 10%);
+  --color-fd-secondary: hsl(224, 40%, 13%);
+  --color-fd-muted-foreground: hsl(220, 18%, 70%);
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html > body[data-scroll-locked] {
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}

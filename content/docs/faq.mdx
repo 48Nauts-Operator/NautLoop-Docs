@@ -1,0 +1,36 @@
+---
+title: FAQ
+description: Subscriptions, hosting, privacy, compliance, and what happens after early access.
+---
+
+## How does the subscription sync work — and is it allowed?
+
+On demand, the CLI extracts your AI subscription's OAuth token from your local keychain and pushes it encrypted into a sandbox that **only you** access. The token lives in that sandbox and dies with it. Providers permit personal use of your own subscription from your own machines — a rented sandbox only you access is the same category. Don't share your account or serve other people's prompts with it.
+
+## Where is the infrastructure hosted?
+
+Dedicated servers in Falkenstein (Germany) and Helsinki (Finland), inside a private mesh network. EU data residency by default.
+
+## Do you see my prompts, code, or data?
+
+No. Sandboxes run on our infrastructure, but content lives only inside your sandbox; staff cannot read it. Session recordings and artifacts land in your tenant-scoped storage with retention you control.
+
+## Is memory required?
+
+No — Engram memory is **optional and off by default**. When enabled, it's isolated per organization, exportable anytime as a signed archive, and deletable.
+
+## What about GDPR, DSG, and sector-specific compliance?
+
+Standard DPA on request; custom DPAs and sector addenda on the Business tier. Full audit logs and per-session recordings support regulated deployments (medical, legal, banking) — contact us for bespoke terms.
+
+## Can I self-host?
+
+The underlying platform will be available for self-hosted enterprise deployments — the managed tier is what you pay for uptime, orchestration, dashboard, and support. [Talk to us](mailto:hello@nautloop.com?subject=NautLoop%20self-hosted).
+
+## What does "concurrent swarms" mean on the pricing page?
+
+A swarm is one task's team (Lead + specialists, alive only for that task). "2 concurrent swarms" means two intents running at the same time. See [Key concepts](/docs/concepts) for the per-tier agent caps.
+
+## Can I run it from my phone?
+
+The dashboard is mobile-first; push notifications and voice input are part of the near-term roadmap, with native apps to follow.

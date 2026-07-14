@@ -1,0 +1,31 @@
+---
+title: Key concepts
+description: Sandbox, swarm, mesh, memory, verb — the five terms that describe everything NautLoop does.
+---
+
+## Sandbox
+
+A Firecracker microVM. Boots in about two seconds, ships pre-configured with the agent CLIs and tools you need, and is **isolated at the kernel level** from every other sandbox. Dies at task end unless explicitly kept alive.
+
+## Swarm
+
+**One task's team** — a Lead plus its specialists, alive only for that task. The Lead counts toward the per-tier agent cap; if a decomposition wants more specialists than the cap allows, it batches (round 1, then round 2 in the same swarm) — a cap makes work *slower*, never *impossible*.
+
+| Tier | Concurrent swarms | Agents per swarm |
+|---|---|---|
+| Starter | 1 | up to 5 |
+| Plus | 2 | up to 10 |
+| Team | 4 | up to 10 |
+| Business | 8+ | up to 20 (custom above) |
+
+## Mesh
+
+The peer-to-peer network connecting agents. Every sandbox registers a presence on spawn and unregisters on death. Messages are **signed and logged**; agents can broadcast to the mesh, DM specific peers, or contribute to open questions.
+
+## Memory (optional)
+
+Engram, the per-tenant persistent knowledge store — **off unless you turn it on**. With memory enabled, every task's key findings and decisions are written back, and future tasks read from it before starting: second-time answers arrive faster and sharper. Your memory is isolated per organization, exportable as a signed archive, and deletable.
+
+## Verb
+
+What you ask NautLoop to do — not "spawn a sandbox" but *"build me a landing page"*, *"review this PR"*, *"investigate why revenue dropped"*. Verbs map to loop shapes; the right specialists spawn automatically.

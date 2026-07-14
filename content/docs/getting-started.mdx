@@ -1,0 +1,42 @@
+---
+title: Getting started
+description: From zero to your first swarm in five minutes — CLI install, sign-in, subscription sync, first ask.
+---
+
+<Callout title="Early access">
+The CLI and dashboard are rolling out to early-access users. If a step below isn't live for you yet, [email us](mailto:join@nautlense.com?subject=NautLoop%20early%20access) and we'll get you onboarded.
+</Callout>
+
+## 1. Install the CLI
+
+```bash
+npm install -g @nautloop/cli
+```
+
+## 2. Sign in
+
+```bash
+nautloop login
+```
+
+Opens your browser once; paste your NautLoop API key (from the dashboard) into the terminal.
+
+## 3. Bring your subscription
+
+```bash
+nautloop auth sync
+```
+
+This extracts your AI subscription's OAuth token from your local keychain and prepares it for injection into **your** sandboxes on demand. Your token never leaves your control — it travels encrypted into a sandbox only you access, and dies with the sandbox.
+
+## 4. Start your first swarm
+
+```bash
+nautloop ask "review the last three commits on this repo"
+```
+
+NautLoop reads your current repo state, spawns a Lead sandbox that decomposes the ask, dispatches specialists in parallel, streams status to your terminal, delivers a synthesized Markdown report, and kills the swarm.
+
+## 5. Watch it live (optional)
+
+Open the dashboard to see every agent's live desktop, the mesh conversation graph, and per-agent status — or get a push notification when the task completes.

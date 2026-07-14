@@ -1,0 +1,40 @@
+---
+title: Architecture
+description: Four pillars, one loop pattern — how isolation and coordination work together.
+---
+
+## The four pillars
+
+Every product surface NautLoop customers see is a composition of four layers, all built and operated by 48Nauts and in production internally for over a year:
+
+| Layer | What it does |
+|---|---|
+| **xNaut** | Orchestration brain — Visual Loop Designer, agent dispatcher, doc vault, proof-of-work session logs |
+| **NautLoop Core** | Isolated compute — Firecracker microVMs on EU-hosted hardware, sub-two-second boot, template-based agents |
+| **Engram** | Mesh + optional memory — signed peer-to-peer messaging, per-tenant knowledge that compounds |
+| **NautGate** | LLM gateway — provider abstraction, observability, per-tenant metering and cost tracking |
+
+## The loop pattern
+
+Every task follows the same six-step shape:
+
+1. **Convene** — a Lead sandbox spawns; its only job is to decompose the intent and dispatch.
+2. **Dispatch** — specialists spawn with narrowly-scoped access: a data-agent gets database credentials, a research-agent gets web access, a code-agent gets the repository. Each joins the mesh with a unique presence.
+3. **Execute in isolation** — specialists work in their own VMs. They cannot see each other's data; they coordinate only through signed mesh messages. Anything sensitive lives only in the sandbox that touched it — and that sandbox dies at task end.
+4. **Synthesize** — the Lead collects contributions, resolves contradictions, and may spawn round-2 specialists to fill gaps.
+5. **Deliver** — the artifact is pushed to you: mobile push, PR, email, document, screen recording, or drive upload.
+6. **Persist + dissolve** — sandboxes are destroyed. With memory on, Engram keeps the findings and the signed audit log; next time, the Lead's first move is *"what do we already know?"*
+
+## Isolation and coordination together
+
+The combination that separates NautLoop from other multi-agent platforms:
+
+- **AutoGen / CrewAI / LangGraph** — agents in one process, shared memory, no VM isolation.
+- **Kubernetes** — real process isolation, no agent-native peer communication.
+- **Devin / Cursor Composer** — a single agent, single workspace, no parallelism.
+- **Hosted monoliths** — no per-user isolation, their tokens not yours, no persistent memory.
+- **NautLoop** — every agent in its own microVM, coordinated through a signed peer mesh, optionally backed by per-tenant memory, powered by your subscription.
+
+## EU by default
+
+All sandboxes run on dedicated infrastructure in Falkenstein (Germany) and Helsinki (Finland). No data transits US infrastructure unless the LLM provider you choose does. Signed audit trails and per-tenant data isolation are the baseline, not an enterprise add-on.
