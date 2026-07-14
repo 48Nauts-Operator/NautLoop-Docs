@@ -32,7 +32,7 @@ Every task follows the same six-step shape:
 The combination that separates NautLoop from other multi-agent platforms:
 
 - **AutoGen / CrewAI / LangGraph** — agents in one process, shared memory, no VM isolation.
-- **Kubernetes** — real process isolation, no agent-native peer communication.
+- **E2B / Modal** — metered sandbox clouds: real isolation, but pay-per-vCPU-second, no agent-native coordination, no memory.
 - **Devin / Cursor Composer** — a single agent, single workspace, no parallelism.
 - **Hosted monoliths** — no per-user isolation, their tokens not yours, no persistent memory.
 - **NautLoop** — every agent in its own microVM, coordinated through a signed peer mesh, optionally backed by per-tenant memory, powered by your subscription.
